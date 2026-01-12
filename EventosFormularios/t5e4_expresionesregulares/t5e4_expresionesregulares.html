@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio White & Pinkman - Control de Lotes</title>
+    <style>
+        :root {
+            --quimico-green: #3d633d;
+            --azul-met: #45b3e0;
+            --desierto-sand: #f4d03f;
+            --error-red: #e74c3c;
+            --fondo-oscuro: #121212;
+        }
+
+        body {
+            background-color: var(--fondo-oscuro);
+            font-family: 'Courier New', Courier, monospace;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .formulario {
+            background: #1e1e1e;
+            padding: 30px;
+            border-left: 10px solid var(--quimico-green);
+            border-radius: 4px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 20px rgba(61, 99, 61, 0.3);
+        }
+
+        h1 { color: var(--quimico-green); text-align: center; text-transform: uppercase; letter-spacing: 4px; }
+        h1 span { background: var(--quimico-green); color: white; padding: 5px 10px;margin-right: 2px; }
+
+        .campo { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-size: 0.85rem; color: var(--azul-met); text-transform: uppercase; }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            background: #252525;
+            border: 1px solid #444;
+            color: var(--desierto-sand);
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        /* Clases para errores */
+        .error-input { border: 2px solid var(--error-red) !important; background: #2a1b1b !important; }
+        .error-label { color: var(--error-red) !important; font-weight: bold; }
+
+        button {
+            background: var(--quimico-green);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="formulario">
+        <h1><span>Br</span>eaking Bad</h1>
+        <form id="formularioBolsas">
+            
+            <div class="campo">
+                <label for="fecha" id="l-fecha">Fecha (dd/mm/aaaa):</label>
+                <input type="text" id="fecha" placeholder="20/01/2026">
+            </div>
+
+            <div class="campo">
+                <label for="cocinero" id="l-cocinero">Cocinero (Clave):</label>
+                <input type="text" id="cocinero" placeholder="WW$1234">
+            </div>
+
+            <div class="campo">
+                <label for="destinatario" id="l-destinatario">Destinatario:</label>
+                <input type="text" id="destinatario" placeholder="NM_alburquerque:1234">
+            </div>
+
+            <div class="campo">
+                <label for="gramos" id="l-gramos">Peso (100-5000g):</label>
+                <input type="number" id="gramos">
+            </div>
+
+            <div class="campo">
+                <label for="composicion" id="l-composicion">Composición:</label>
+                <input type="text" id="composicion" placeholder="200gC3OH7">
+            </div>
+
+            <div class="campo">
+                <label for="cuenta" id="l-cuenta">Cuenta EEUU:</label>
+                <input type="text" id="cuenta" placeholder="AB03-123456654321-33">
+                <input type="text" id="cuentaLimpia" placeholder="Número procesado" readonly style="margin-top:10px; color:var(--quimico-green)">
+            </div>
+
+            <button type="submit">REGISTRAR LOTE</button>
+        </form>
+    </div>
+
+    <script src="t5e4_expresionesregulares.js"></script>
+</body>
+</html>

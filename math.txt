@@ -1,0 +1,50 @@
+-------- Math ---------
+E--> devuelve el nº de Euler
+{
+    LN2
+    LN10
+    --> Logaritmos neperianos
+}
+{
+    Log2E --> Logaritmos en base 2
+    Log10E --> Logaritmos en base 10
+}
+
+abs(x)--> valor absoluto de x
+acos(x)--> arcocseno
+asin(x)--> arcoseno
+atan(x)--> arcotangente
+cos(x)--> coseno
+ceil(x)--> redondea a la alta
+floor(x)--> redondea a la baja
+log(x)--> logaritmo neperiano de x
+max(x,y...)--> devuelve el numero más alto de los parametros
+min(x,y...)--> devuelve el numero más bajo de los parametros
+pow(x,y)--> eleva x a y
+random()--> devuelve un numero al azar
+round(x)--> redondea al entero más proximo
+sin(x)--> seno 
+sqrt(x)--> raiz cuadrada
+tan(x)--> tangente
+
+    ---- metodos ----
+replace() --> busca una subcadena en la cadena y la sustituye por la nueva cadena
+search() --> buscar una subcadena en la cadena y devuelve la posicion
+slice() --> extrae una parte de una cadena y te devuelve una nueva
+split() --> divide una cadena en un array
+substr() --> extrae caracteres de una cadena , en una posicion en especifico y nº caracteres solicitado
+substring() --> te da el valor de la cadena
+---------- Number ----------
+var num= new Number(value)
+
+--------- Propiedades -----------
+--> max_value
+--> min_value
+
+--------- toString () -----------
+2 --> binario
+8 --> octal
+16 --> hexadecimal
+---------------------------------
+toExponential(x)
+toFixed(x)

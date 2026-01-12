@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Discos - Validación</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --bg-color: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h1 { text-align: center; color: var(--primary-color); }
+
+        .form-group { margin-bottom: 1rem; }
+
+        label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: 600; 
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        /* --- CLASES PARA LA AMPLIACIÓN (ERRORES) --- */
+        .input-error {
+            border: 2px solid red !important;
+            outline: none;
+        }
+
+        .label-error {
+            color: red !important;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Discos</h1>
+        <form id="discoForm">
+            <div class="form-group">
+                <label for="nombre">Nombre del disco</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="artista">Grupo de música o cantante</label>
+                <input type="text" id="artista" name="artista">
+            </div>
+
+            <div class="form-group">
+                <label for="anio">Año de publicación</label>
+                <input type="text" id="anio" name="anio">
+            </div>
+
+            <div class="form-group">
+                <label for="tipo">Tipo de música</label>
+                <select id="tipo" name="tipo">
+                    <option value="">-- Selecciona --</option>
+                    <option value="rock">Rock</option>
+                    <option value="pop">Pop</option>
+                    <option value="punk">Punk</option>
+                    <option value="indie">Indie</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="localizacion">Localización (Estantería)</label>
+                <input type="text" id="localizacion" name="localizacion">
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="prestado" name="prestado">
+                <label for="prestado" style="display:inline">¿Disco prestado?</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar Disco</button>
+        </form>
+    </div>
+    <script src="t5e3_formulario2.js"></script>
+</body>
+</html>

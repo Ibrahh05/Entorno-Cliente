@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asociación Deportiva Castro Urdiales</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+        }
+
+        table.calendario {
+            width: 120px;
+            border-collapse: collapse;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        table.calendario th, table.calendario td {
+            padding: 3px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        table.calendario tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .contrasena {
+            margin-top: 20px;
+        }
+
+        #resultado {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Calendario de 3 filas -->
+    <table class="calendario">
+        <tr>
+            <th>Día</th>
+            <th>Mes</th>
+            <th>Año</th>
+        </tr>
+        <tr>
+            <td id="diaSemana"></td>
+            <td id="mes"></td>
+            <td id="anio"></td>
+        </tr>
+    </table>
+</header>
+
+<main>
+    <h1>Bienvenido a la Asociación Deportiva Castro Urdiales</h1>
+
+    <!-- Sección para comprobar contraseña -->
+    <div class="contrasena">
+        <label for="inputContrasena">Introduce tu contraseña:</label>
+        <input type="text" id="inputContrasena">
+        <button id="btnComprobar">Comprobar</button>
+        <p id="resultado"></p>
+    </div>
+</main>
+
+<footer>
+    <p>Asociación Deportiva Castro Urdiales</p>
+    <p>Web desarrollada por: Brahim Hanaoui Karbab</p>
+    <p><a href="#" id="avisoLegal">Aviso legal</a></p>
+</footer>
+
+<!-- Script principal -->
+<script src="final.js"></script>
+</body>
+</html>

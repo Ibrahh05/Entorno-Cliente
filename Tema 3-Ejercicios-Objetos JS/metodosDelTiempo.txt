@@ -1,0 +1,12 @@
+//getDate()-> devuelve el dia del mes (1-31)
+//getDay()-> devuelve el dia de la semana (0-6)
+//getFullyear()-> devuelve el año(4 digitos) 2025
+//getHours()-> devuelve la hora(0-23)
+//getMilliseconds()-> '' milisegundos(0-999)
+//getMinutes()-> '' minutos(0-59)
+//getMounth()-> '' mes(0-11)
+//getSeconds()-> '' segundos(0-59)
+//getTime()-> '' los milisegundos desde media noche del 1 de enero 1970
+//getTimezoneOffset()-> devuelve la diferencia de tiempo entre GMT y la hora local en minutos
+//getUTCDate()-> '' dia del mes en base a UTC
+//getUTCDay()-> '' ''

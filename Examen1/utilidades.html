@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Utilidades Deportivas</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --gray: #95a5a6;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        h2:nth-of-type(1)::before { content: "📊"; }
+        h2:nth-of-type(2)::before { content: "⚖️"; }
+        h2:nth-of-type(3)::before { content: "❤️"; }
+        h2:nth-of-type(4)::before { content: "🏆"; }
+        h2:nth-of-type(5)::before { content: "🕒"; }
+        
+        input[type="number"],
+        input[type="date"] {
+            padding: 10px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: var(--transition);
+            margin: 5px 0 15px 0;
+            width: 200px;
+        }
+        
+        input[type="number"]:focus,
+        input[type="date"]:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+            outline: none;
+        }
+        
+        input[type="radio"] {
+            margin: 0 5px 0 15px;
+        }
+        
+        button {
+            background: linear-gradient(to right, var(--secondary), #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+            margin: 10px 0;
+        }
+        
+        button:hover {
+            background: linear-gradient(to right, #2980b9, var(--secondary));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(52, 152, 219, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .resultado {
+            background-color: var(--light);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 5px solid var(--secondary);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .result-item {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .result-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .result-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .result-value {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: center;
+        }
+        
+        td {
+            padding: 10px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e9f7fe;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gray), transparent);
+            margin: 25px 0;
+        }
+        
+        .data-section {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .calculator-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            input[type="number"],
+            input[type="date"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Utilidades Deportivas</h1>
+
+        <div class="data-section">
+            <h2>Tus Datos</h2>
+            Altura: <input type="number" id="altura"> cm<br>
+            Peso: <input type="number" id="peso"> kg<br>
+            Sexo: Hombre<input type="radio" name="sexo" value="h"> 
+            Mujer<input type="radio" name="sexo" value="m"><br>
+            Edad: <input type="number" id="edad"><br>
+            Fecha nacimiento: <input type="date" id="fecha_nacimiento">
+        </div>
+
+        <hr>
+
+        <div class="calculator-section">
+            <h2>Calculadora IMC</h2>
+            <button onclick="calcularIMC()">Calcular IMC</button>
+            <div class="resultado">
+                <div class="result-item">
+                    <span class="result-label">IMC:</span>
+                    <span class="result-value" id="IMC"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Escala:</span>
+                    <span class="result-value" id="escala"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="calculator-section">
+            <h2>Calculadora FCM</h2>
+            <button onclick="calcularFCM()">Calcular FCM</button>
+            <div class="resultado">
+                <div class="result-item">
+                    <span class="result-label">FCM:</span>
+                    <span class="result-value" id="FCM"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Zona recuperación:</span>
+                    <span class="result-value" id="zona_recuperacion"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Zona aeróbica:</span>
+                    <span class="result-value" id="zona_aerobica"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Zona anaeróbica:</span>
+                    <span class="result-value" id="zona_anaerobica"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Línea roja:</span>
+                    <span class="result-value" id="linea_roja"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="calculator-section">
+            <h2>Calculadora Categoría</h2>
+            <button onclick="calcularCategoria()">Calcular Categoría</button>
+            <div class="resultado">
+                <div class="result-item">
+                    <span class="result-label">Tu categoría:</span>
+                    <span class="result-value" id="categoria"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="calculator-section">
+            <h2>Horarios</h2>
+            <button onclick="generarHorarios()">Mostrar Horarios</button>
+            <div id="horarios"></div>
+        </div>
+    </div>
+
+    <!-- Scripts externos -->
+    <script src="js/imc.js"></script>
+    <script src="js/fcm.js"></script>
+    <script src="js/horario.js"></script>
+    <script src="js/categoria.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego Simpson Simple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    :root {
+    --amarillo-simpson: #ffd900;
+    --azul-pantalon: #0094ff;
+    --borde-comic: #000;
+}
+
+body {
+    background-color: #45b3e0; /* Color cielo de la intro */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: var(--amarillo-simpson);
+    text-shadow: 3px 3px 0 var(--borde-comic), -1px -1px 0 var(--borde-comic), 1px -1px 0 var(--borde-comic), -1px 1px 0 var(--borde-comic);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.marcador {
+    background: white;
+    padding: 10px 20px;
+    border: 4px solid var(--borde-comic);
+    border-radius: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#puntos {
+    border: none;
+    font-size: 2.5rem;
+    width: 40px;
+    text-align: center;
+    color: #e74c3c;
+    background: transparent;
+    outline: none;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;;
+}
+
+/* La Tabla */
+table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 0 rgba(0,0,0,0.2);
+}
+
+td {
+    width: 110px;
+    height: 110px;
+    background-color: var(--azul-pantalon);
+    border: 4px solid var(--borde-comic);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+td:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Imagen dentro de la celda */
+td img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que no se deformen las fotos */
+    display: none;
+    background-color: white;
+}
+
+/* Cuando aciertas */
+td.acierto {
+    background-color: #2ecc71 !important;
+    border-color: #27ae60;
+    cursor: default;
+    transform: none;
+}
+
+
+
+</style>
+<body>
+
+    <h1>Parejas Simpson</h1>
+    
+    <label>Puntos: </label>
+    <input type="text" id="puntos" value="0" readonly>
+
+    <table id="tablero">
+        <tr>
+            <td onclick="voltear(this, 0)"> <img src="" id="img0"> </td>
+            <td onclick="voltear(this, 1)"> <img src="" id="img1"> </td>
+            <td onclick="voltear(this, 2)"> <img src="" id="img2"> </td>
+            <td onclick="voltear(this, 3)"> <img src="" id="img3"> </td>
+        </tr>
+        <tr>
+            <td onclick="voltear(this, 4)"> <img src="" id="img4"> </td>
+            <td onclick="voltear(this, 5)"> <img src="" id="img5"> </td>
+            <td onclick="voltear(this, 6)"> <img src="" id="img6"> </td>
+            <td onclick="voltear(this, 7)"> <img src="" id="img7"> </td>
+        </tr>
+        <tr>
+            <td onclick="voltear(this, 8)"> <img src="" id="img8"> </td>
+            <td onclick="voltear(this, 9)"> <img src="" id="img9"> </td>
+            <td onclick="voltear(this, 10)"> <img src="" id="img10"> </td>
+            <td onclick="voltear(this, 11)"> <img src="" id="img11"> </td>
+        </tr>
+    </table>
+
+    <script src="t5e2_parejas.js"></script>
+</body>
+</html>

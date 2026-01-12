@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ejercicio t4e4_objetos</title>
+<style>
+    /* ===========================
+    VARIABLES GENERALES
+=========================== */
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --gray: #95a5a6;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ===========================
+    RESETEO BÁSICO
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--dark);
+    min-height: 100vh;
+    padding: 25px;
+}
+
+/* ===========================
+    CONTENEDORES GENERALES
+=========================== */
+.container, 
+.simple-container {
+    max-width: 900px;
+    background: white;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* ===========================
+            TITULOS
+=========================== */
+h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary);
+}
+
+h2 {
+    margin: 25px 0 15px;
+    color: var(--primary);
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Iconos automáticos en páginas que los usen */
+h2::before {
+    font-size: 1.2rem;
+}
+h2:nth-of-type(1)::before { content: "📊"; }
+h2:nth-of-type(2)::before { content: "⚖️"; }
+h2:nth-of-type(3)::before { content: "❤️"; }
+h2:nth-of-type(4)::before { content: "🏆"; }
+h2:nth-of-type(5)::before { content: "🕒"; }
+
+/* ===========================
+            BOTONES
+=========================== */
+button {
+    background: linear-gradient(to right, var(--secondary), #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    margin: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(to right, #2980b9, var(--secondary));
+}
+
+/* ===========================
+        INPUTS
+=========================== */
+input[type="number"],
+input[type="date"],
+input[type="text"] {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 2px solid #ddd;
+    width: 220px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    transition: var(--transition);
+}
+
+input:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+/* ===========================
+    RESULTADOS / TEXTOS
+=========================== */
+.resultado,
+.simple-output {
+    background: var(--light);
+    padding: 15px;
+    border-left: 5px solid var(--secondary);
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: var(--shadow);
+}
+
+.simple-output p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ===========================
+            TABLAS
+=========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+th {
+    background: var(--primary);
+    padding: 12px;
+    color: white;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+tr:hover {
+    background: #e9f7fe;
+}
+
+/* ===========================
+    SECCIONES ESPECIALES
+=========================== */
+.data-section,
+.calculator-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 25px;
+}
+
+/* ===========================
+    ADAPTABILIDAD
+=========================== */
+@media (max-width: 600px) {
+    .container, .simple-container {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input[type="number"],
+    input[type="date"] {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+<h1>Gestión de Discos</h1>
+
+<div>
+    <button onclick="mostrarNumero()">Mostrar número de discos</button>
+    <button onclick="mostrarListado()">Mostrar listado de discos</button>
+    <button onclick="mostrarIntervalo()">Mostrar intervalo de discos</button>
+    <button onclick="aniadirDisco()">Añadir un disco</button>
+    <button onclick="borrarDisco()">Borrar un disco</button>
+    <button onclick="consultarDisco()">Consultar un disco</button>
+</div>
+
+<div id="output"></div>
+
+<script src="t4e4_objetos.js"></script>
+</body>
+</html>
