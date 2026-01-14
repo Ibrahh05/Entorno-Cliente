@@ -1,2 +1,0 @@
-# Entorno-Cliente
-pass
