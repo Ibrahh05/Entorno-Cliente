@@ -5,7 +5,7 @@ function ParentComponent() {
     const [name, setName] = useState("Juanaco")
 
     function greetings() {
-        return "Frase chorra que ahora mismo no se me ocurre"
+        return "Un pollito fango o que chavales?!! 😜"
     }
 
     return (

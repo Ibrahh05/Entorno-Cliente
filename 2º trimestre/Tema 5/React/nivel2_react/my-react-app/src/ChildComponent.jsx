@@ -12,8 +12,8 @@ function ChildComponent(props) {
             Change to Juanky
         </button>
 
-        <button onClick={() => props.setName("Iker")}>
-            Change to Iker
+        <button onClick={() => props.setName("Ibrahim")}>
+            Change to Ibrahim
         </button>
         </>
     )
@@ -27,5 +27,7 @@ ChildComponent.propTypes = {
     greetings: PropTypes.func.isRequired,
     setName: PropTypes.func.isRequired
 }
+
+
 
 export default ChildComponent
