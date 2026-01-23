@@ -1,39 +1,34 @@
-import { useState } from 'react'
+import "./App.css";
+import styles from './App.module.css';
+import classNames from 'classnames';
 function App() {
-const [newContador, setContador] = useState(0)
-const [isParagraphVisible, setIsParagraphVisible] = useState(true)
-const [modo, setModo] = useState('')
-const toggleStatus = () => {
-setIsParagraphVisible(!isParagraphVisible)
-}
-if (newContador<0){
-    setContador(0)
-}
+
+
     return (
         <>
-            <h1>Ocultar parrafo</h1>
-            {isParagraphVisible && (
-            <p>Dejen de esclavizarnos porfavor 😢</p>
-            )}
-            <button onClick={toggleStatus}>
-            {isParagraphVisible ? 'Hide' : 'Show'} Paragraph
+        <br />
+        <br />
+            <h3>(∩｀-´)⊃━━☆ﾟ.*･｡ﾟ . . . . . . . . . .─╤╦︻3=(◣_◢)=Ƹ︻╦╤─</h3>
+            <h1 >⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⋆༺𓆩⚔𓆪༻⋆⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘</h1>
+            <p >Dejen la exclavitud (╯︵╰,)</p>
+            <br/>
+            <div className={styles.fuenteBase}>
+                <div className={styles.tarjetaAzul}>
+                    Esta es una tarjeta con estilo local.
+                </div>
+                <div className={classNames(styles.tarjetaAzul, styles.bordeResaltado)}>
+                    Esta tarjeta tiene fondo azul Y borde resaltado.
+                </div>
+                </div>
+            <div className='p-6'>
+            <h1 className='text-3xl font-bold'>CSS en React</h1>
+            <p className='mt-2 text-sm opacity-80'>
+            Estilos con clases de utilidad
+            </p>
+            <button className='mt-4 px-4 py-2 text-white bg-blue-500 rounded'>
+            Suscribirme
             </button>
-            <br></br>
-            <br></br> 
-            <h1>Contador con botones</h1>
-            <button onClick={() => setContador((n) => n + 1)}>Sumar</button>
-            <button onClick={() => setContador((n) => n - 1)}>Restar</button>
-            {
-            <h2>Contador: {newContador} </h2>
-            }
-            <h1>Elije tu modo</h1>
-            <input
-            type="text"
-            placeholder="Escribe tu modo"
-            value={modo}
-            onChange={(e) => setModo(e.target.value)}
-            />
-            <p>Tu modo es: <strong>{modo|| '...'} </strong></p>
+            </div>
         </>
     )
 }
