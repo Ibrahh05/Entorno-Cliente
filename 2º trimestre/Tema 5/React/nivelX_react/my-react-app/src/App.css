@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "tailwindcss";
+html{
+        background: linear-gradient(to bottom, #1e3a8a, #7e22ce);
+        background-attachment: fixed;
+}
+h1{
+        color: red;
+        text-align: center;
+        font-size: 25px;
+        font-family: monospace;
+}
+
+h3{
+        color: rgb(4, 255, 0);
+        text-align: center;
+        font-size: 15px;
+}
+p{
+        color: rgb(255, 200, 0);
+        text-align: center;
+        font-size: 15px;
+}
